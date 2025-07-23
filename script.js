@@ -155,3 +155,13 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// Mobile Menu Toggle (add this to your existing script.js)
+document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+    // Toggle mobile menu active state
+    this.classList.toggle('active');
+    document.querySelector('.nav').classList.toggle('active');
+    
+    // Toggle body scroll prevention
+    document.body.classList.toggle('no-scroll');
+});
