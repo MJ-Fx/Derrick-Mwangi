@@ -1819,3 +1819,95 @@ main {
         padding-bottom: 80px;
     }
 }
+
+
+
+
+/* ===== Gallery Page Footer Fix ===== */
+/* Ensure body takes full height */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Main content area grows to push footer down */
+main {
+    flex: 1;
+    position: relative;
+}
+
+/* Gallery section specific fixes */
+.gallery-section {
+    padding-bottom: 120px; /* Extra space before footer */
+}
+
+/* Footer positioning fixes */
+.footer {
+    background-color: var(--black);
+    color: var(--white);
+    padding: 60px 0 20px;
+    margin-top: auto; /* Pushes footer to bottom */
+    position: relative;
+    z-index: 10;
+}
+
+/* Restore original footer alignment */
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+    text-align: left; /* Force left alignment */
+    justify-items: start; /* Align grid items to start */
+}
+
+/* Footer column alignment */
+.footer-col {
+    text-align: left;
+}
+
+/* Social links alignment */
+.social-links {
+    justify-content: flex-start;
+}
+
+/* Mobile-specific fixes */
+@media (max-width: 768px) {
+    .gallery-section {
+        padding-bottom: 80px;
+    }
+    
+    .footer {
+        padding: 40px 0 20px;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    /* Keep left alignment on mobile */
+    .footer-col {
+        text-align: left;
+    }
+    
+    .social-links {
+        justify-content: flex-start;
+    }
+}
+
+/* Prevent content from being hidden behind footer */
+.gallery-section::after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 100%;
+    visibility: hidden;
+}
+
+/* Ensure footer stays at true bottom */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
