@@ -1650,3 +1650,41 @@ img {
         z-index: 1002;
     }
 }
+
+
+/* Prevent horizontal scrolling */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    padding: 0 15px;
+}
+
+@media (max-width: 768px) {
+    /* Adjust gallery items for mobile */
+    .web-gallery,
+    .design-gallery,
+    .video-gallery {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    /* Fix design gallery height */
+    .design-gallery {
+        height: 300px;
+    }
+    
+    /* Adjust filter buttons */
+    .gallery-filter {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .filter-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
