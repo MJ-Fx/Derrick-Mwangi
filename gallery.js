@@ -3,56 +3,56 @@ const galleryData = [
     { 
         id: 1, 
         category: 'web', 
-        image: 'assets/images/gallery/web1.jpg',
+        image: 'Dee 1.jpg',
         title: 'E-commerce Website Design',
         desc: 'Modern e-commerce interface with seamless user experience'
     },
     { 
         id: 2, 
         category: 'graphic', 
-        image: 'assets/images/gallery/graphic1.jpg',
+        image: 'Dee 2.jpg',
         title: 'Brand Identity Package',
         desc: 'Complete branding for a tech startup'
     },
     { 
         id: 3, 
         category: 'photo', 
-        image: 'assets/images/gallery/photo1.jpg',
+        image: 'Dee 5.jpg',
         title: 'Product Photography',
         desc: 'Professional product shots for marketing'
     },
     { 
         id: 4, 
         category: 'video', 
-        image: 'assets/images/gallery/video1.jpg',
+        image: 'Dee 1.jpg',
         title: 'Commercial Videography',
         desc: '30-second promotional video'
     },
     { 
         id: 5, 
         category: 'web', 
-        image: 'assets/images/gallery/web2.jpg',
+        image: 'Dee 2.jpg',
         title: 'Portfolio Website',
         desc: 'Minimalist design for creative professional'
     },
     { 
         id: 6, 
         category: 'graphic', 
-        image: 'assets/images/gallery/graphic2.jpg',
+        image: 'Dee 5.jpg',
         title: 'Event Poster Design',
         desc: 'Vibrant concert poster design'
     },
     { 
         id: 7, 
         category: 'photo', 
-        image: 'assets/images/gallery/photo2.jpg',
+        image: 'Dee 1.jpg',
         title: 'Portrait Photography',
         desc: 'Professional headshot session'
     },
     { 
         id: 8, 
         category: 'video', 
-        image: 'assets/images/gallery/video2.jpg',
+        image: 'Dee 2.jpg',
         title: 'Corporate Video',
         desc: 'Company profile video production'
     }
