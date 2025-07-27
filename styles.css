@@ -1722,3 +1722,54 @@ html, body {
         margin-bottom: 50px;
     }
 }
+
+/* Gallery Page Footer Fixes */
+.gallery-section {
+    position: relative;
+    z-index: 1;
+    min-height: calc(100vh - 400px); /* Adjust based on your header/footer height */
+    padding-bottom: 100px; /* Creates space above footer */
+}
+
+/* Footer Positioning Fix */
+.footer {
+    position: relative;
+    z-index: 2;
+    margin-top: auto; /* Pushes footer to bottom */
+}
+
+/* Ensure content doesn't hide behind footer */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+/* Mobile-specific footer fixes */
+@media (max-width: 768px) {
+    .gallery-section {
+        padding-bottom: 80px;
+        min-height: calc(100vh - 350px);
+    }
+    
+    .footer {
+        padding: 30px 0 0;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .footer-col {
+        text-align: center;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+}
