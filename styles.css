@@ -1911,3 +1911,109 @@ html, body {
     overflow-x: hidden;
     width: 100%;
 }
+
+
+/* ===== Gallery Page Specific Fixes ===== */
+/* Ensure proper document flow */
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+    padding-bottom: 120px; /* Space for footer */
+    position: relative;
+}
+
+/* Gallery section adjustments */
+.gallery-section {
+    padding: 60px 0;
+    position: relative;
+}
+
+/* Footer fixes */
+.footer {
+    background-color: var(--black);
+    color: var(--white);
+    padding: 60px 0 20px;
+    margin-top: auto;
+    position: relative;
+    z-index: 10;
+    width: 100%;
+}
+
+.footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Restore original footer alignment */
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+    text-align: left;
+    justify-items: start;
+}
+
+.footer-col {
+    text-align: left;
+}
+
+.social-links {
+    justify-content: flex-start;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Mobile-specific fixes */
+@media (max-width: 768px) {
+    main {
+        padding-bottom: 80px;
+    }
+    
+    .gallery-section {
+        padding: 40px 0;
+    }
+    
+    .footer {
+        padding: 40px 0 20px;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .footer-col {
+        text-align: left;
+    }
+    
+    .social-links {
+        justify-content: flex-start;
+    }
+}
+
+/* Ensure no content is hidden behind footer */
+.gallery-section::after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 100%;
+    visibility: hidden;
+    margin-bottom: 20px;
+}
