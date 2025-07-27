@@ -1773,3 +1773,25 @@ main {
         justify-content: center;
     }
 }
+
+
+/* Gallery Footer Specific Fixes */
+.gallery-section::after {
+    content: '';
+    display: block;
+    height: 100px; /* Same as padding-bottom */
+    width: 100%;
+}
+
+/* Maintain footer styling */
+.footer-content {
+    background-color: var(--bg-dark);
+    color: var(--tertiary-color);
+    padding: 50px 0;
+}
+
+.footer-bottom {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 20px 0;
+    text-align: center;
+}
