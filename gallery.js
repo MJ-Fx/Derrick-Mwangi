@@ -290,3 +290,35 @@ function setupModal() {
         }
     });
 }
+
+
+// Ensure mobile menu works on gallery page
+document.addEventListener('DOMContentLoaded', function() {
+    // Fix for gallery page scrolling
+    if (window.innerWidth <= 768) {
+        document.documentElement.style.overflowX = 'hidden';
+        document.body.style.overflowX = 'hidden';
+    }
+    
+    // Close mobile menu when navigating
+    const navLinks = document.querySelectorAll('.nav ul li a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            if (window.innerWidth <= 768) {
+                document.querySelector('.mobile-menu-btn').classList.remove('active');
+                document.querySelector('.nav').classList.remove('active');
+                document.body.classList.remove('menu-open');
+            }
+        });
+    });
+});
+
+// Handle window resize
+window.addEventListener('resize', function() {
+    if (window.innerWidth > 768) {
+        // Reset mobile menu state on desktop
+        document.querySelector('.mobile-menu-btn').classList.remove('active');
+        document.querySelector('.nav').classList.remove('active');
+        document.body.classList.remove('menu-open');
+    }
+});
