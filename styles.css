@@ -1546,474 +1546,288 @@ img {
     background: linear-gradient(135deg, var(--gold-light), var(--gold-primary));
 }
 
-/* Mobile Menu Fixes */
-.mobile-menu-toggle {
-    display: none; /* Keep this to hide on desktop */
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    z-index: 1001;
-    transition: transform 0.3s ease;
+
+
+
+
+
+
+/* Gallery Page Styles */
+.gallery-hero {
+    padding: 180px 0 100px;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/images/gallery-bg.jpg') center/cover no-repeat;
+    color: var(--tertiary-color);
 }
 
-.mobile-menu-toggle.active {
+.gallery-filter {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 50px;
+}
+
+.filter-btn {
+    padding: 10px 25px;
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    transform: translateY(-3px);
+}
+
+.gallery-category {
+    margin-bottom: 80px;
+}
+
+.category-title {
+    position: relative;
+    padding-bottom: 15px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.category-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), #F5D76E, var(--primary-color));
+    background-size: 200% auto;
+    animation: gradient 3s linear infinite;
+}
+
+.web-gallery,
+.design-gallery,
+.video-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+    aspect-ratio: 16/9;
+}
+
+.gallery-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-item img,
+.gallery-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img,
+.gallery-item:hover video {
+    transform: scale(1.1);
+}
+
+.item-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    color: var(--tertiary-color);
+    transform: translateY(100%);
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.gallery-item:hover .item-caption {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.item-caption h3 {
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
+
+.item-caption p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Design Gallery Specific Styles */
+.design-gallery {
+    position: relative;
+    height: 500px;
+}
+
+.design-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease, transform 1s ease;
+    z-index: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.design-item.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+.design-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.design-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    color: var(--tertiary-color);
+    text-align: center;
+    transform: translateY(20px);
+    transition: transform 0.5s ease 0.3s;
+}
+
+.design-item.active .design-caption {
+    transform: translateY(0);
+}
+
+/* Project Modal */
+.project-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    overflow-y: auto;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-modal.show {
+    display: block;
+    opacity: 1;
+}
+
+.modal-content {
+    position: relative;
+    max-width: 900px;
+    margin: 50px auto;
+    background-color: var(--bg-dark);
+    border-radius: 10px;
+    overflow: hidden;
+    animation: modalFadeIn 0.5s ease forwards;
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: var(--tertiary-color);
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: var(--transition);
+}
+
+.close-modal:hover {
+    color: var(--primary-color);
     transform: rotate(90deg);
 }
 
-.mobile-menu-toggle .bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background-color: var(--black);
-    margin: 5px 0;
-    transition: all 0.3s ease;
+.modal-body {
+    padding: 40px;
+    color: var(--tertiary-color);
 }
 
-.header.scrolled .mobile-menu-toggle .bar {
-    background-color: var(--white);
-}
-
-/* Active state for bars */
-.mobile-menu-toggle.active .bar:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-}
-
-.mobile-menu-toggle.active .bar:nth-child(2) {
-    opacity: 0;
-}
-
-.mobile-menu-toggle.active .bar:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-}
-
-/* Nav active state */
-.nav.active {
-    left: 0 !important;
-}
-
-/* Prevent scrolling when menu is open */
-.no-scroll {
-    overflow: hidden;
-}
-
-/* Ensure this media query exists */
-@media (max-width: 768px) {
-    .mobile-menu-toggle {
-        display: block;
-    }
-    
-    .nav {
-        position: fixed;
-        top: 80px;
-        left: -100%;
-        width: 100%;
-        height: calc(100vh - 80px);
-        background-color: var(--black);
-        color: var(--white);
-        transition: all 0.3s ease;
-        padding: 40px 20px;
-    }
-    
-    .nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-    
-    .header.scrolled .nav {
-        background-color: var(--black);
-    }
-}
-
-
-
-/* Ensure header stays on top of content */
-.header {
-    z-index: 1000;
-}
-
-/* Fix mobile menu button visibility */
-.mobile-menu-btn {
-    z-index: 1001;
-    position: relative;
-}
-
-@media (max-width: 768px) {
-    /* Prevent header from being hidden */
-    .gallery-hero {
-        padding-top: 150px; /* Make space for fixed header */
-    }
-    
-    /* Ensure logo and menu button are visible */
-    .logo {
-        z-index: 1002;
-    }
-}
-
-
-/* Prevent horizontal scrolling */
-html, body {
-    max-width: 100%;
-    overflow-x: hidden;
-}
-
-.container {
+.modal-body img,
+.modal-body video {
     width: 100%;
-    padding: 0 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
 }
 
+.modal-body h2 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.modal-body p {
+    margin-bottom: 20px;
+}
+
+.modal-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.tech-tag {
+    background-color: rgba(212, 175, 55, 0.2);
+    color: var(--primary-color);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+@keyframes modalFadeIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Styles */
 @media (max-width: 768px) {
-    /* Adjust gallery items for mobile */
     .web-gallery,
     .design-gallery,
     .video-gallery {
-        grid-template-columns: 1fr;
-        gap: 20px;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     }
     
-    /* Fix design gallery height */
-    .design-gallery {
-        height: 300px;
-    }
-    
-    /* Adjust filter buttons */
-    .gallery-filter {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .filter-btn {
-        width: 100%;
-        text-align: center;
-    }
-}
-
-@media (max-width: 768px) {
-    /* Improve mobile gallery appearance */
-    .gallery-item {
-        aspect-ratio: 1/1;
-    }
-    
-    /* Better modal for mobile */
     .modal-content {
+        margin: 20px auto;
         width: 95%;
-        margin: 10px auto;
     }
     
     .modal-body {
-        padding: 15px;
+        padding: 20px;
     }
-    
-    /* Adjust category titles */
-    .category-title {
-        font-size: 1.5rem;
-        margin-bottom: 20px;
-    }
-    
-    /* Fix footer spacing */
-    .footer-content {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-    
-    /* Ensure proper spacing */
-    .gallery-category {
-        margin-bottom: 50px;
-    }
-}
-
-/* Gallery Page Footer Fixes */
-.gallery-section {
-    position: relative;
-    z-index: 1;
-    min-height: calc(100vh - 400px); /* Adjust based on your header/footer height */
-    padding-bottom: 100px; /* Creates space above footer */
-}
-
-/* Footer Positioning Fix */
-.footer {
-    position: relative;
-    z-index: 2;
-    margin-top: auto; /* Pushes footer to bottom */
-}
-
-/* Ensure content doesn't hide behind footer */
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-main {
-    flex: 1;
-}
-
-/* Mobile-specific footer fixes */
-@media (max-width: 768px) {
-    .gallery-section {
-        padding-bottom: 80px;
-        min-height: calc(100vh - 350px);
-    }
-    
-    .footer {
-        padding: 30px 0 0;
-    }
-    
-    .footer-content {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-    
-    .footer-col {
-        text-align: center;
-    }
-    
-    .social-links {
-        justify-content: center;
-    }
-}
-
-
-/* Gallery Footer Specific Fixes */
-.gallery-section::after {
-    content: '';
-    display: block;
-    height: 100px; /* Same as padding-bottom */
-    width: 100%;
-}
-
-/* Maintain footer styling */
-.footer-content {
-    background-color: var(--bg-dark);
-    color: var(--tertiary-color);
-    padding: 50px 0;
-}
-
-.footer-bottom {
-    background-color: rgba(0, 0, 0, 0.2);
-    padding: 20px 0;
-    text-align: center;
-}
-
-/* Add this to ensure no content is hidden */
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-main {
-    flex: 1;
-    overflow: hidden; /* Prevents any overflow issues */
-}
-
-/* Final adjustment for gallery spacing */
-.gallery-section:last-child {
-    margin-bottom: 0;
-    padding-bottom: 100px;
-}
-
-@media (max-width: 768px) {
-    .gallery-section:last-child {
-        padding-bottom: 80px;
-    }
-}
-
-
-
-
-/* ===== Gallery Page Footer Fix ===== */
-/* Ensure body takes full height */
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-/* Main content area grows to push footer down */
-main {
-    flex: 1;
-    position: relative;
-}
-
-/* Gallery section specific fixes */
-.gallery-section {
-    padding-bottom: 120px; /* Extra space before footer */
-}
-
-/* Footer positioning fixes */
-.footer {
-    background-color: var(--black);
-    color: var(--white);
-    padding: 60px 0 20px;
-    margin-top: auto; /* Pushes footer to bottom */
-    position: relative;
-    z-index: 10;
-}
-
-/* Restore original footer alignment */
-.footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
-    margin-bottom: 40px;
-    text-align: left; /* Force left alignment */
-    justify-items: start; /* Align grid items to start */
-}
-
-/* Footer column alignment */
-.footer-col {
-    text-align: left;
-}
-
-/* Social links alignment */
-.social-links {
-    justify-content: flex-start;
-}
-
-/* Mobile-specific fixes */
-@media (max-width: 768px) {
-    .gallery-section {
-        padding-bottom: 80px;
-    }
-    
-    .footer {
-        padding: 40px 0 20px;
-    }
-    
-    .footer-content {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-    
-    /* Keep left alignment on mobile */
-    .footer-col {
-        text-align: left;
-    }
-    
-    .social-links {
-        justify-content: flex-start;
-    }
-}
-
-/* Prevent content from being hidden behind footer */
-.gallery-section::after {
-    content: '';
-    display: block;
-    height: 1px;
-    width: 100%;
-    visibility: hidden;
-}
-
-/* Ensure footer stays at true bottom */
-html, body {
-    overflow-x: hidden;
-    width: 100%;
-}
-
-
-/* ===== Gallery Page Specific Fixes ===== */
-/* Ensure proper document flow */
-html, body {
-    height: 100%;
-    width: 100%;
-    overflow-x: hidden;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-main {
-    flex: 1;
-    padding-bottom: 120px; /* Space for footer */
-    position: relative;
-}
-
-/* Gallery section adjustments */
-.gallery-section {
-    padding: 60px 0;
-    position: relative;
-}
-
-/* Footer fixes */
-.footer {
-    background-color: var(--black);
-    color: var(--white);
-    padding: 60px 0 20px;
-    margin-top: auto;
-    position: relative;
-    z-index: 10;
-    width: 100%;
-}
-
-.footer .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Restore original footer alignment */
-.footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
-    margin-bottom: 40px;
-    text-align: left;
-    justify-items: start;
-}
-
-.footer-col {
-    text-align: left;
-}
-
-.social-links {
-    justify-content: flex-start;
-}
-
-.footer-bottom {
-    text-align: center;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Mobile-specific fixes */
-@media (max-width: 768px) {
-    main {
-        padding-bottom: 80px;
-    }
-    
-    .gallery-section {
-        padding: 40px 0;
-    }
-    
-    .footer {
-        padding: 40px 0 20px;
-    }
-    
-    .footer-content {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-    
-    .footer-col {
-        text-align: left;
-    }
-    
-    .social-links {
-        justify-content: flex-start;
-    }
-}
-
-/* Ensure no content is hidden behind footer */
-.gallery-section::after {
-    content: '';
-    display: block;
-    height: 1px;
-    width: 100%;
-    visibility: hidden;
-    margin-bottom: 20px;
 }
