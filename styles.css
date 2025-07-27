@@ -1625,3 +1625,28 @@ img {
         background-color: var(--black);
     }
 }
+
+
+
+/* Ensure header stays on top of content */
+.header {
+    z-index: 1000;
+}
+
+/* Fix mobile menu button visibility */
+.mobile-menu-btn {
+    z-index: 1001;
+    position: relative;
+}
+
+@media (max-width: 768px) {
+    /* Prevent header from being hidden */
+    .gallery-hero {
+        padding-top: 150px; /* Make space for fixed header */
+    }
+    
+    /* Ensure logo and menu button are visible */
+    .logo {
+        z-index: 1002;
+    }
+}
