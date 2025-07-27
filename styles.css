@@ -1688,3 +1688,37 @@ html, body {
         text-align: center;
     }
 }
+
+@media (max-width: 768px) {
+    /* Improve mobile gallery appearance */
+    .gallery-item {
+        aspect-ratio: 1/1;
+    }
+    
+    /* Better modal for mobile */
+    .modal-content {
+        width: 95%;
+        margin: 10px auto;
+    }
+    
+    .modal-body {
+        padding: 15px;
+    }
+    
+    /* Adjust category titles */
+    .category-title {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+    
+    /* Fix footer spacing */
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    /* Ensure proper spacing */
+    .gallery-category {
+        margin-bottom: 50px;
+    }
+}
