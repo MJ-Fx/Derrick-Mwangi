@@ -8,13 +8,6 @@ const galleryData = [
         desc: 'Modern e-commerce interface with seamless user experience'
     },
     { 
-        id: 2, 
-        category: 'graphic', 
-        image: 'photo_2_2025-07-30_18-23-18.jpg',
-        title: 'Brand Identity Package',
-        desc: 'Complete branding for a tech startup'
-    },
-    { 
         id: 3, 
         category: 'photo', 
         image: 'photo_5_2025-07-30_18-23-18.jpg',
