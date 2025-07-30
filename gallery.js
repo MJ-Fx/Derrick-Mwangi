@@ -17,7 +17,7 @@ const galleryData = [
     { 
         id: 3, 
         category: 'photo', 
-        image: 'photo_2_2025-07-30_18-23-18.jpg',
+        image: 'photo_5_2025-07-30_18-23-18.jpg',
         title: 'Product Photography',
         desc: 'Professional product shots for marketing'
     },
@@ -38,7 +38,7 @@ const galleryData = [
     { 
         id: 6, 
         category: 'graphic', 
-        image: 'photo_5_2025-07-30_18-23-18.jpg',
+        image: 'Dee 2.jpg',
         title: 'Event Poster Design',
         desc: 'Vibrant concert poster design'
     },
