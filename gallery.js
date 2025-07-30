@@ -3,42 +3,42 @@ const galleryData = [
     { 
         id: 1, 
         category: 'web', 
-        image: 'Dee 1.jpg',
+        image: 'photo_1_2025-07-30_18-23-18.jpg',
         title: 'E-commerce Website Design',
         desc: 'Modern e-commerce interface with seamless user experience'
     },
     { 
         id: 2, 
         category: 'graphic', 
-        image: 'Dee 2.jpg',
+        image: 'photo_2_2025-07-30_18-23-18.jpg',
         title: 'Brand Identity Package',
         desc: 'Complete branding for a tech startup'
     },
     { 
         id: 3, 
         category: 'photo', 
-        image: 'Dee 5.jpg',
+        image: 'photo_2_2025-07-30_18-23-18.jpg',
         title: 'Product Photography',
         desc: 'Professional product shots for marketing'
     },
     { 
         id: 4, 
         category: 'video', 
-        image: 'Dee 1.jpg',
+        image: 'photo_3_2025-07-30_18-23-18.jpg',
         title: 'Commercial Videography',
         desc: '30-second promotional video'
     },
     { 
         id: 5, 
         category: 'web', 
-        image: 'Dee 2.jpg',
+        image: 'photo_4_2025-07-30_18-23-18.jpg',
         title: 'Portfolio Website',
         desc: 'Minimalist design for creative professional'
     },
     { 
         id: 6, 
         category: 'graphic', 
-        image: 'Dee 5.jpg',
+        image: 'photo_5_2025-07-30_18-23-18.jpg',
         title: 'Event Poster Design',
         desc: 'Vibrant concert poster design'
     },
